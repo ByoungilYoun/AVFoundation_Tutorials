@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		0FA1F3E526FDA95F00CC812D /* VideoRecordAndPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1F3E426FDA95F00CC812D /* VideoRecordAndPlayTests.swift */; };
 		0FA1F3F026FDA95F00CC812D /* VideoRecordAndPlayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1F3EF26FDA95F00CC812D /* VideoRecordAndPlayUITests.swift */; };
 		0FA1F3FE26FDAAE600CC812D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1F3FD26FDAAE600CC812D /* MainViewController.swift */; };
+		0FA1F40126FDABC500CC812D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0FA1F40026FDABC500CC812D /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA1F40126FDABC500CC812D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +143,9 @@
 			dependencies = (
 			);
 			name = VideoRecordAndPlay;
+			packageProductDependencies = (
+				0FA1F40026FDABC500CC812D /* SnapKit */,
+			);
 			productName = VideoRecordAndPlay;
 			productReference = 0FA1F3CA26FDA95E00CC812D /* VideoRecordAndPlay.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +217,9 @@
 				Base,
 			);
 			mainGroup = 0FA1F3C126FDA95D00CC812D;
+			packageReferences = (
+				0FA1F3FF26FDABC500CC812D /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 0FA1F3CB26FDA95E00CC812D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -581,6 +589,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0FA1F3FF26FDABC500CC812D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0FA1F40026FDABC500CC812D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FA1F3FF26FDABC500CC812D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0FA1F3C226FDA95D00CC812D /* Project object */;
 }
