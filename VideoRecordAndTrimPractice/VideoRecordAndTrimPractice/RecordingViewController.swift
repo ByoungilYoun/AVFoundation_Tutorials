@@ -20,7 +20,7 @@ class RecordingViewController : UIViewController {
   private let disposeBag = DisposeBag()
   
   let captureSession = AVCaptureSession().then {
-    $0.sessionPreset = .low // 녹화 품질을 설정하는 속성
+    $0.sessionPreset = .hd1280x720 // 녹화 품질을 설정하는 속성
   }
   
   var videoDevice : AVCaptureDevice!
@@ -36,7 +36,6 @@ class RecordingViewController : UIViewController {
     $0.position = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
     $0.videoGravity = .resizeAspectFill
   }
-//  lazy var previewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
   
   let topContainer = UIView()
   
@@ -90,7 +89,26 @@ class RecordingViewController : UIViewController {
     stopTimer()
   }
   
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    configureVideoOrientation()
+  }
+  
   //MARK: - Functions
+  private func configureVideoOrientation() {
+      if  previewLayer == self.previewLayer,
+          let connection = previewLayer.connection {
+          let orientation = UIDevice.current.orientation
+
+          if connection.isVideoOrientationSupported,
+              let videoOrientation = AVCaptureVideoOrientation(rawValue: orientation.rawValue) {
+              previewLayer.frame = self.view.bounds
+              connection.videoOrientation = videoOrientation
+          }
+      }
+  }
+  
+  
   private func configureUI() {
     self.view.layer.addSublayer(previewLayer)
     
