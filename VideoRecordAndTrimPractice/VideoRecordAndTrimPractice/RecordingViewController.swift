@@ -338,7 +338,7 @@ class RecordingViewController: UIViewController {
   
   private func startTimer() {
     timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
-      guard let `self` = self else { return }
+      guard let self = self else { return }
       
       self.secondsOfTimer += 1
       self.timerLabel.text = Double(self.secondsOfTimer).format(units: [.hour ,.minute, .second])
@@ -348,6 +348,7 @@ class RecordingViewController: UIViewController {
   private func stopTimer() {
     timer?.invalidate()
     self.timerLabel.text = "00:00:00"
+    self.secondsOfTimer = 0 // 스탑 눌렀을때 다시 초 초기화 하는 방법 추가 
   }
   
 }
