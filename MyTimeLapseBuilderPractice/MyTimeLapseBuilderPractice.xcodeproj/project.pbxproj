@@ -1,0 +1,672 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F5946D22730E20B000A2F9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5946D12730E20B000A2F9D /* AppDelegate.swift */; };
+		0F5946D42730E20B000A2F9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5946D32730E20B000A2F9D /* SceneDelegate.swift */; };
+		0F5946D62730E20B000A2F9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5946D52730E20B000A2F9D /* ViewController.swift */; };
+		0F5946D92730E20B000A2F9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5946D72730E20B000A2F9D /* Main.storyboard */; };
+		0F5946DB2730E20C000A2F9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F5946DA2730E20C000A2F9D /* Assets.xcassets */; };
+		0F5946DE2730E20C000A2F9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5946DC2730E20C000A2F9D /* LaunchScreen.storyboard */; };
+		0F5946E92730E20C000A2F9D /* MyTimeLapseBuilderPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5946E82730E20C000A2F9D /* MyTimeLapseBuilderPracticeTests.swift */; };
+		0F5946F32730E20C000A2F9D /* MyTimeLapseBuilderPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5946F22730E20C000A2F9D /* MyTimeLapseBuilderPracticeUITests.swift */; };
+		0F5946F52730E20D000A2F9D /* MyTimeLapseBuilderPracticeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5946F42730E20D000A2F9D /* MyTimeLapseBuilderPracticeUITestsLaunchTests.swift */; };
+		0F5947032730E519000A2F9D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0F5947022730E519000A2F9D /* SnapKit */; };
+		0F5947052730E600000A2F9D /* TimeLapseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5947042730E600000A2F9D /* TimeLapseBuilder.swift */; };
+		0F5947072730E7FA000A2F9D /* blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F5947062730E7FA000A2F9D /* blue.jpg */; };
+		0F5947092730E7FF000A2F9D /* red.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F5947082730E7FF000A2F9D /* red.jpg */; };
+		0F59470B2730E803000A2F9D /* white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F59470A2730E803000A2F9D /* white.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0F5946E52730E20C000A2F9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F5946C62730E20B000A2F9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F5946CD2730E20B000A2F9D;
+			remoteInfo = MyTimeLapseBuilderPractice;
+		};
+		0F5946EF2730E20C000A2F9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F5946C62730E20B000A2F9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F5946CD2730E20B000A2F9D;
+			remoteInfo = MyTimeLapseBuilderPractice;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F5946CE2730E20B000A2F9D /* MyTimeLapseBuilderPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTimeLapseBuilderPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F5946D12730E20B000A2F9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0F5946D32730E20B000A2F9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0F5946D52730E20B000A2F9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0F5946D82730E20B000A2F9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0F5946DA2730E20C000A2F9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0F5946DD2730E20C000A2F9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0F5946DF2730E20C000A2F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F5946E42730E20C000A2F9D /* MyTimeLapseBuilderPracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTimeLapseBuilderPracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F5946E82730E20C000A2F9D /* MyTimeLapseBuilderPracticeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimeLapseBuilderPracticeTests.swift; sourceTree = "<group>"; };
+		0F5946EE2730E20C000A2F9D /* MyTimeLapseBuilderPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTimeLapseBuilderPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F5946F22730E20C000A2F9D /* MyTimeLapseBuilderPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimeLapseBuilderPracticeUITests.swift; sourceTree = "<group>"; };
+		0F5946F42730E20D000A2F9D /* MyTimeLapseBuilderPracticeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimeLapseBuilderPracticeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0F5947042730E600000A2F9D /* TimeLapseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLapseBuilder.swift; sourceTree = "<group>"; };
+		0F5947062730E7FA000A2F9D /* blue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue.jpg; sourceTree = "<group>"; };
+		0F5947082730E7FF000A2F9D /* red.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red.jpg; sourceTree = "<group>"; };
+		0F59470A2730E803000A2F9D /* white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = white.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0F5946CB2730E20B000A2F9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F5947032730E519000A2F9D /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F5946E12730E20C000A2F9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F5946EB2730E20C000A2F9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F5946C52730E20B000A2F9D = {
+			isa = PBXGroup;
+			children = (
+				0F5946D02730E20B000A2F9D /* MyTimeLapseBuilderPractice */,
+				0F5946E72730E20C000A2F9D /* MyTimeLapseBuilderPracticeTests */,
+				0F5946F12730E20C000A2F9D /* MyTimeLapseBuilderPracticeUITests */,
+				0F5946CF2730E20B000A2F9D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0F5946CF2730E20B000A2F9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0F5946CE2730E20B000A2F9D /* MyTimeLapseBuilderPractice.app */,
+				0F5946E42730E20C000A2F9D /* MyTimeLapseBuilderPracticeTests.xctest */,
+				0F5946EE2730E20C000A2F9D /* MyTimeLapseBuilderPracticeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0F5946D02730E20B000A2F9D /* MyTimeLapseBuilderPractice */ = {
+			isa = PBXGroup;
+			children = (
+				0F5946D12730E20B000A2F9D /* AppDelegate.swift */,
+				0F5946D32730E20B000A2F9D /* SceneDelegate.swift */,
+				0F5946D52730E20B000A2F9D /* ViewController.swift */,
+				0F5947042730E600000A2F9D /* TimeLapseBuilder.swift */,
+				0F59470A2730E803000A2F9D /* white.jpg */,
+				0F5947062730E7FA000A2F9D /* blue.jpg */,
+				0F5947082730E7FF000A2F9D /* red.jpg */,
+				0F5946D72730E20B000A2F9D /* Main.storyboard */,
+				0F5946DA2730E20C000A2F9D /* Assets.xcassets */,
+				0F5946DC2730E20C000A2F9D /* LaunchScreen.storyboard */,
+				0F5946DF2730E20C000A2F9D /* Info.plist */,
+			);
+			path = MyTimeLapseBuilderPractice;
+			sourceTree = "<group>";
+		};
+		0F5946E72730E20C000A2F9D /* MyTimeLapseBuilderPracticeTests */ = {
+			isa = PBXGroup;
+			children = (
+				0F5946E82730E20C000A2F9D /* MyTimeLapseBuilderPracticeTests.swift */,
+			);
+			path = MyTimeLapseBuilderPracticeTests;
+			sourceTree = "<group>";
+		};
+		0F5946F12730E20C000A2F9D /* MyTimeLapseBuilderPracticeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0F5946F22730E20C000A2F9D /* MyTimeLapseBuilderPracticeUITests.swift */,
+				0F5946F42730E20D000A2F9D /* MyTimeLapseBuilderPracticeUITestsLaunchTests.swift */,
+			);
+			path = MyTimeLapseBuilderPracticeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0F5946CD2730E20B000A2F9D /* MyTimeLapseBuilderPractice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F5946F82730E20D000A2F9D /* Build configuration list for PBXNativeTarget "MyTimeLapseBuilderPractice" */;
+			buildPhases = (
+				0F5946CA2730E20B000A2F9D /* Sources */,
+				0F5946CB2730E20B000A2F9D /* Frameworks */,
+				0F5946CC2730E20B000A2F9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyTimeLapseBuilderPractice;
+			packageProductDependencies = (
+				0F5947022730E519000A2F9D /* SnapKit */,
+			);
+			productName = MyTimeLapseBuilderPractice;
+			productReference = 0F5946CE2730E20B000A2F9D /* MyTimeLapseBuilderPractice.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0F5946E32730E20C000A2F9D /* MyTimeLapseBuilderPracticeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F5946FB2730E20D000A2F9D /* Build configuration list for PBXNativeTarget "MyTimeLapseBuilderPracticeTests" */;
+			buildPhases = (
+				0F5946E02730E20C000A2F9D /* Sources */,
+				0F5946E12730E20C000A2F9D /* Frameworks */,
+				0F5946E22730E20C000A2F9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0F5946E62730E20C000A2F9D /* PBXTargetDependency */,
+			);
+			name = MyTimeLapseBuilderPracticeTests;
+			productName = MyTimeLapseBuilderPracticeTests;
+			productReference = 0F5946E42730E20C000A2F9D /* MyTimeLapseBuilderPracticeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0F5946ED2730E20C000A2F9D /* MyTimeLapseBuilderPracticeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F5946FE2730E20D000A2F9D /* Build configuration list for PBXNativeTarget "MyTimeLapseBuilderPracticeUITests" */;
+			buildPhases = (
+				0F5946EA2730E20C000A2F9D /* Sources */,
+				0F5946EB2730E20C000A2F9D /* Frameworks */,
+				0F5946EC2730E20C000A2F9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0F5946F02730E20C000A2F9D /* PBXTargetDependency */,
+			);
+			name = MyTimeLapseBuilderPracticeUITests;
+			productName = MyTimeLapseBuilderPracticeUITests;
+			productReference = 0F5946EE2730E20C000A2F9D /* MyTimeLapseBuilderPracticeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0F5946C62730E20B000A2F9D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					0F5946CD2730E20B000A2F9D = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					0F5946E32730E20C000A2F9D = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 0F5946CD2730E20B000A2F9D;
+					};
+					0F5946ED2730E20C000A2F9D = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 0F5946CD2730E20B000A2F9D;
+					};
+				};
+			};
+			buildConfigurationList = 0F5946C92730E20B000A2F9D /* Build configuration list for PBXProject "MyTimeLapseBuilderPractice" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0F5946C52730E20B000A2F9D;
+			packageReferences = (
+				0F5947012730E519000A2F9D /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = 0F5946CF2730E20B000A2F9D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0F5946CD2730E20B000A2F9D /* MyTimeLapseBuilderPractice */,
+				0F5946E32730E20C000A2F9D /* MyTimeLapseBuilderPracticeTests */,
+				0F5946ED2730E20C000A2F9D /* MyTimeLapseBuilderPracticeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0F5946CC2730E20B000A2F9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F5946DE2730E20C000A2F9D /* LaunchScreen.storyboard in Resources */,
+				0F5946DB2730E20C000A2F9D /* Assets.xcassets in Resources */,
+				0F5946D92730E20B000A2F9D /* Main.storyboard in Resources */,
+				0F5947092730E7FF000A2F9D /* red.jpg in Resources */,
+				0F5947072730E7FA000A2F9D /* blue.jpg in Resources */,
+				0F59470B2730E803000A2F9D /* white.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F5946E22730E20C000A2F9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F5946EC2730E20C000A2F9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0F5946CA2730E20B000A2F9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F5947052730E600000A2F9D /* TimeLapseBuilder.swift in Sources */,
+				0F5946D62730E20B000A2F9D /* ViewController.swift in Sources */,
+				0F5946D22730E20B000A2F9D /* AppDelegate.swift in Sources */,
+				0F5946D42730E20B000A2F9D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F5946E02730E20C000A2F9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F5946E92730E20C000A2F9D /* MyTimeLapseBuilderPracticeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F5946EA2730E20C000A2F9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F5946F52730E20D000A2F9D /* MyTimeLapseBuilderPracticeUITestsLaunchTests.swift in Sources */,
+				0F5946F32730E20C000A2F9D /* MyTimeLapseBuilderPracticeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0F5946E62730E20C000A2F9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F5946CD2730E20B000A2F9D /* MyTimeLapseBuilderPractice */;
+			targetProxy = 0F5946E52730E20C000A2F9D /* PBXContainerItemProxy */;
+		};
+		0F5946F02730E20C000A2F9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F5946CD2730E20B000A2F9D /* MyTimeLapseBuilderPractice */;
+			targetProxy = 0F5946EF2730E20C000A2F9D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0F5946D72730E20B000A2F9D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F5946D82730E20B000A2F9D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0F5946DC2730E20C000A2F9D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F5946DD2730E20C000A2F9D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0F5946F62730E20D000A2F9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0F5946F72730E20D000A2F9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0F5946F92730E20D000A2F9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7MH5N2BKX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyTimeLapseBuilderPractice/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.byoungil.youn.MyTimeLapseBuilderPractice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0F5946FA2730E20D000A2F9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7MH5N2BKX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyTimeLapseBuilderPractice/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.byoungil.youn.MyTimeLapseBuilderPractice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0F5946FC2730E20D000A2F9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7MH5N2BKX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.byoungil.youn.MyTimeLapseBuilderPracticeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyTimeLapseBuilderPractice.app/MyTimeLapseBuilderPractice";
+			};
+			name = Debug;
+		};
+		0F5946FD2730E20D000A2F9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7MH5N2BKX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.byoungil.youn.MyTimeLapseBuilderPracticeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyTimeLapseBuilderPractice.app/MyTimeLapseBuilderPractice";
+			};
+			name = Release;
+		};
+		0F5946FF2730E20D000A2F9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7MH5N2BKX;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.byoungil.youn.MyTimeLapseBuilderPracticeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyTimeLapseBuilderPractice;
+			};
+			name = Debug;
+		};
+		0F5947002730E20D000A2F9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7MH5N2BKX;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.byoungil.youn.MyTimeLapseBuilderPracticeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyTimeLapseBuilderPractice;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0F5946C92730E20B000A2F9D /* Build configuration list for PBXProject "MyTimeLapseBuilderPractice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F5946F62730E20D000A2F9D /* Debug */,
+				0F5946F72730E20D000A2F9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0F5946F82730E20D000A2F9D /* Build configuration list for PBXNativeTarget "MyTimeLapseBuilderPractice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F5946F92730E20D000A2F9D /* Debug */,
+				0F5946FA2730E20D000A2F9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0F5946FB2730E20D000A2F9D /* Build configuration list for PBXNativeTarget "MyTimeLapseBuilderPracticeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F5946FC2730E20D000A2F9D /* Debug */,
+				0F5946FD2730E20D000A2F9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0F5946FE2730E20D000A2F9D /* Build configuration list for PBXNativeTarget "MyTimeLapseBuilderPracticeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F5946FF2730E20D000A2F9D /* Debug */,
+				0F5947002730E20D000A2F9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0F5947012730E519000A2F9D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0F5947022730E519000A2F9D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F5947012730E519000A2F9D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0F5946C62730E20B000A2F9D /* Project object */;
+}
