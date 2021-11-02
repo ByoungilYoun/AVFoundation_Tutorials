@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FB4D5D12730DE4800C6A6C1 /* TimeLapseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4D5D02730DE4700C6A6C1 /* TimeLapseBuilder.swift */; };
 		0FCF26C627278A52009DAD53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF26C527278A52009DAD53 /* AppDelegate.swift */; };
 		0FCF26C827278A52009DAD53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF26C727278A52009DAD53 /* SceneDelegate.swift */; };
 		0FCF26CD27278A52009DAD53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FCF26CB27278A52009DAD53 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FB4D5D02730DE4700C6A6C1 /* TimeLapseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLapseBuilder.swift; sourceTree = "<group>"; };
 		0FCF26C227278A52009DAD53 /* VideoRecordAndTrimPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoRecordAndTrimPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCF26C527278A52009DAD53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FCF26C727278A52009DAD53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				0FCF26C527278A52009DAD53 /* AppDelegate.swift */,
 				0FCF26C727278A52009DAD53 /* SceneDelegate.swift */,
 				0FCF26F5272791B2009DAD53 /* RecordingViewController.swift */,
+				0FB4D5D02730DE4700C6A6C1 /* TimeLapseBuilder.swift */,
 				0FCF26CB27278A52009DAD53 /* Main.storyboard */,
 				0FCF26CE27278A53009DAD53 /* Assets.xcassets */,
 				0FCF26D027278A53009DAD53 /* LaunchScreen.storyboard */,
@@ -326,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB4D5D12730DE4800C6A6C1 /* TimeLapseBuilder.swift in Sources */,
 				0FCF26C627278A52009DAD53 /* AppDelegate.swift in Sources */,
 				0FCF26F6272791B2009DAD53 /* RecordingViewController.swift in Sources */,
 				0FCF26C827278A52009DAD53 /* SceneDelegate.swift in Sources */,

@@ -10,5 +10,6 @@ target 'VideoRecordAndTrimPractice' do
 	 pod 'RxCocoa', '~> 4.5.0'
 	 pod 'Then'
 	 pod 'SnapKit'
+	 pod 'Spitfire'
 
 end

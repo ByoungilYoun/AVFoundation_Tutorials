@@ -13,12 +13,13 @@ import CoreMotion
 import Then
 import SnapKit
 
+
 class RecordingViewController: UIViewController {
   
-  // MARK:- Properties
+  //MARK: - Properties
   
   var disposeBag = DisposeBag()
-  
+  let getImage = PublishRelay<Bool>()
   let captureSession = AVCaptureSession()
   
   var videoDevice: AVCaptureDevice!
@@ -30,7 +31,7 @@ class RecordingViewController: UIViewController {
   var videoOutput: AVCaptureMovieFileOutput!
   
   lazy var previewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession).then {
-    $0.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+    $0.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height - 500)
     $0.position = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
     $0.videoGravity = .resizeAspectFill
   }
@@ -56,8 +57,28 @@ class RecordingViewController: UIViewController {
   var timer: Timer?
   var secondsOfTimer = 0
   
+  var images = [UIImage]()
   
-  // MARK:- LifeCycle Methods
+  var cmTime : CMTime?
+  
+  var myImageView : UIImageView = {
+    let v = UIImageView()
+    v.backgroundColor = .yellow
+    v.contentMode = .scaleAspectFit
+    return v
+  }()
+  
+  var timePush = 1
+  
+  //MARK: - LifeCycle
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    layout()
+    bind()
+    videoDevice = bestDevice(in: .back)
+    setupSession()
+  }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -74,17 +95,7 @@ class RecordingViewController: UIViewController {
     stopTimer()
   }
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    layout()
-    bind()
-    videoDevice = bestDevice(in: .back)
-    setupSession()
-  }
-  
-  
-  // MARK:- View Rendering
+  //MARK: - Functions
   
   private func layout() {
     self.view.layer.addSublayer(previewLayer)
@@ -121,15 +132,36 @@ class RecordingViewController: UIViewController {
       $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-50)
       $0.height.equalTo(40)
     }
+    
+    self.view.addSubview(myImageView)
+    myImageView.snp.makeConstraints {
+      $0.top.equalTo(view.safeAreaLayoutGuide)
+      $0.leading.trailing.equalToSuperview()
+      $0.height.equalTo(200)
+    }
   }
   
   
   // MARK:- Rx Binding
   
   private func bind() {
+    self.getImage.bind { [weak self] isStart in
+      guard let self = self else { return }
+      self.imageFromVideo(url: self.outputURL!, at: Double(self.timePush)) { image in
+        guard let myimage = image else {return}
+        self.images.removeAll()
+        self.images.append(myimage)
+        print("하하하 \(self.images.count)")
+        self.myImageView.image = self.images[0]
+        DispatchQueue.main.async {
+          self.myImageView.image = image
+        }
+      }
+    }.disposed(by: self.disposeBag)
+    
     recordButton.rx.tap
       .subscribe(onNext: { [weak self] in
-        guard let `self` = self else { return }
+        guard let self = self else { return }
         
         if self.videoOutput.isRecording {
           self.stopRecording()
@@ -143,7 +175,7 @@ class RecordingViewController: UIViewController {
     
     swapButton.rx.tap
       .subscribe(onNext: { [weak self] in
-        guard let `self` = self else { return }
+        guard let self = self else { return }
         self.swapCameraType()
       })
       .disposed(by: self.disposeBag)
@@ -329,10 +361,11 @@ class RecordingViewController: UIViewController {
 
           DispatchQueue.main.async {
               completion(UIImage(cgImage: thumbnailImageRef))
+            self.getImage.accept(true)
+            self.timePush += 1
           }
       }
   }
-  
   
   // MARK:- Timer methods
   
@@ -348,9 +381,8 @@ class RecordingViewController: UIViewController {
   private func stopTimer() {
     timer?.invalidate()
     self.timerLabel.text = "00:00:00"
-    self.secondsOfTimer = 0 // 스탑 눌렀을때 다시 초 초기화 하는 방법 추가 
+    self.secondsOfTimer = 0 // 스탑 눌렀을때 다시 초 초기화 하는 방법 추가
   }
-  
 }
 
 
@@ -367,6 +399,15 @@ extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
       print("Error recording movie: \(error!.localizedDescription)")
     } else {
       let videoRecorded = outputURL! as URL
+      self.imageFromVideo(url: videoRecorded, at: 1, completion: { image in
+        // 여기에 이미지가 1개가 들어가있는데
+        if let image = image {
+          self.images.append(image)
+        }
+        self.myImageView.image = image
+        
+        // url 에 imageFromVideo 함수를 써서 가져오는 이미지들을 모아서 영상으로 인코딩을 해야하나?
+      })
       UISaveVideoAtPathToSavedPhotosAlbum(videoRecorded.path, nil, nil, nil)
     }
   }

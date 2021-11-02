@@ -3,12 +3,14 @@ PODS:
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxSwift (4.5.0)
   - SnapKit (5.0.1)
+  - Spitfire (2.1.1)
   - Then (2.7.0)
 
 DEPENDENCIES:
   - RxCocoa (~> 4.5.0)
   - RxSwift (~> 4.5.0)
   - SnapKit
+  - Spitfire
   - Then
 
 SPEC REPOS:
@@ -16,14 +18,16 @@ SPEC REPOS:
     - RxCocoa
     - RxSwift
     - SnapKit
+    - Spitfire
     - Then
 
 SPEC CHECKSUMS:
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Spitfire: 6fcb6694415f35b1148aaaa2ede4cc5bb025c473
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: a1f9c2af78cda58ee564bb94a24fa639849cb7aa
+PODFILE CHECKSUM: b6c713b1e9fa2fe513add9816e05604cec44787d
 
 COCOAPODS: 1.11.2

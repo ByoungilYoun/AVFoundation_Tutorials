@@ -1,0 +1,6 @@
+framework module Spitfire {
+  umbrella header "Spitfire-umbrella.h"
+
+  export *
+  module * { export * }
+}
