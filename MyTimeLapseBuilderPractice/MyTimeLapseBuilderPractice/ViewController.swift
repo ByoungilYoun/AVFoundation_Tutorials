@@ -25,6 +25,7 @@ class ViewController: UIViewController {
   let myProgressView : UIProgressView = {
     let v = UIProgressView()
     v.progress = 1
+    v.progressTintColor = .lightGray
     return v
   }()
   
@@ -58,9 +59,12 @@ class ViewController: UIViewController {
       let assetType = "jpg"
       let bundle = Bundle.main
       let urls = [
-          bundle.url(forResource: "red", withExtension: assetType)!.absoluteString,
-          bundle.url(forResource: "white", withExtension: assetType)!.absoluteString,
-          bundle.url(forResource: "blue", withExtension: assetType)!.absoluteString,
+          bundle.url(forResource: "11", withExtension: assetType)!.absoluteString,
+          bundle.url(forResource: "21", withExtension: assetType)!.absoluteString,
+          bundle.url(forResource: "31", withExtension: assetType)!.absoluteString,
+//        bundle.url(forResource: "white", withExtension: assetType)!.absoluteString,
+//        bundle.url(forResource: "blue", withExtension: assetType)!.absoluteString,
+//        bundle.url(forResource: "red", withExtension: assetType)!.absoluteString,
       ]
       
       var assets = [String]()
@@ -75,11 +79,16 @@ class ViewController: UIViewController {
   
   //MARK: - @objc func
   @objc func buildTimeLapse(_ sender : Any) {
-    let assets = assetList(count: 480)
+    self.myProgressView.progress = 0
+    // 1분에 1장 -> 1시간 60장, 5시간 300장, 8시간 480장
+    // 1분에 2장 -> 1시간 120장, 5시간 600장, 8시간 960장
+    // 1분에 3장 -> 1시간 180장, 5시간 900장, 8시간 1440장
+    // 1분에 4장 -> 1시간 240장, 5시간 1200장, 8시간 1920장
+    let assets = assetList(count: 1920)
     
     let timeLapseBuilder = TimeLapseBuilder(delegate: self)
     let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
-    timeLapseBuilder.build(with: assets, atFrameRate: 3, type: .mov, toOutputPath: documentPath.appendingPathComponent("AssembledVideo.mov"))
+    timeLapseBuilder.build(with: assets, atFrameRate: 30, type: .mov, toOutputPath: documentPath.appendingPathComponent("AssembledVideo.mov"))
   }
 }
 
@@ -98,6 +107,7 @@ extension ViewController : TimelapseBuilderDelegate {
         self.present(playerVC, animated: true) {
         self.myProgressView.setProgress(0, animated: true)
       }
+        UISaveVideoAtPathToSavedPhotosAlbum(url.path, nil, nil, nil) // 사진 앨범에 저장
     }
   }
   
