@@ -12,6 +12,7 @@ import RxSwift
 import CoreMotion
 import Then
 import SnapKit
+import Photos
 
 
 class RecordingViewController: UIViewController {
@@ -20,7 +21,11 @@ class RecordingViewController: UIViewController {
   
   var disposeBag = DisposeBag()
   let getImage = PublishRelay<Bool>()
-  let captureSession = AVCaptureSession()
+  let captureSession : AVCaptureSession = {
+    let session = AVCaptureSession()
+    session.sessionPreset = .medium
+    return session
+  }()
   
   var videoDevice: AVCaptureDevice!
   
@@ -30,9 +35,11 @@ class RecordingViewController: UIViewController {
   
   var videoOutput: AVCaptureMovieFileOutput!
   
+  let imageOutPut = AVCapturePhotoOutput()
+  
   lazy var previewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession).then {
-    $0.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height - 500)
-    $0.position = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
+    $0.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height - 100)
+    $0.position = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY - 100)
     $0.videoGravity = .resizeAspectFill
   }
   
@@ -55,18 +62,13 @@ class RecordingViewController: UIViewController {
   var deviceOrientation: AVCaptureVideoOrientation = .portrait
   
   var timer: Timer?
+  var imageTimer : Timer?
+  
   var secondsOfTimer = 0
   
   var images = [UIImage]()
   
   var cmTime : CMTime?
-  
-  var myImageView : UIImageView = {
-    let v = UIImageView()
-    v.backgroundColor = .yellow
-    v.contentMode = .scaleAspectFit
-    return v
-  }()
   
   var timePush = 1
   
@@ -83,7 +85,7 @@ class RecordingViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     initMotionManager()
-    
+    swapCameraType() // 맨처음 강제로 front 로 찍히도록
     if !captureSession.isRunning {
       captureSession.startRunning()
     }
@@ -132,33 +134,12 @@ class RecordingViewController: UIViewController {
       $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-50)
       $0.height.equalTo(40)
     }
-    
-    self.view.addSubview(myImageView)
-    myImageView.snp.makeConstraints {
-      $0.top.equalTo(view.safeAreaLayoutGuide)
-      $0.leading.trailing.equalToSuperview()
-      $0.height.equalTo(200)
-    }
   }
   
   
   // MARK:- Rx Binding
   
   private func bind() {
-    self.getImage.bind { [weak self] isStart in
-      guard let self = self else { return }
-      self.imageFromVideo(url: self.outputURL!, at: Double(self.timePush)) { image in
-        guard let myimage = image else {return}
-        self.images.removeAll()
-        self.images.append(myimage)
-        print("하하하 \(self.images.count)")
-        self.myImageView.image = self.images[0]
-        DispatchQueue.main.async {
-          self.myImageView.image = image
-        }
-      }
-    }.disposed(by: self.disposeBag)
-    
     recordButton.rx.tap
       .subscribe(onNext: { [weak self] in
         guard let self = self else { return }
@@ -185,6 +166,7 @@ class RecordingViewController: UIViewController {
     do {
       captureSession.beginConfiguration()
       
+      
       videoInput = try AVCaptureDeviceInput(device: videoDevice!)
       if captureSession.canAddInput(videoInput) {
         captureSession.addInput(videoInput)
@@ -194,6 +176,11 @@ class RecordingViewController: UIViewController {
       audioInput = try AVCaptureDeviceInput(device: audioDevice)
       if captureSession.canAddInput(audioInput) {
         captureSession.addInput(audioInput)
+      }
+      
+      
+      if captureSession.canAddOutput(imageOutPut) {
+        captureSession.addOutput(imageOutPut)
       }
 
       videoOutput = AVCaptureMovieFileOutput()
@@ -287,6 +274,12 @@ class RecordingViewController: UIViewController {
     
     outputURL = tempURL()
     videoOutput.startRecording(to: outputURL!, recordingDelegate: self)
+    
+    imageTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { [weak self] _ in
+      guard let self = self else {return}
+      self.imageOutPut.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+    })
+    
   }
   
   private func stopRecording() {
@@ -294,6 +287,7 @@ class RecordingViewController: UIViewController {
       self.stopTimer()
       videoOutput.stopRecording()
       recordPoint.layer.removeAllAnimations()
+      self.imageTimer?.invalidate()
     }
   }
   
@@ -362,7 +356,7 @@ class RecordingViewController: UIViewController {
           DispatchQueue.main.async {
               completion(UIImage(cgImage: thumbnailImageRef))
             self.getImage.accept(true)
-            self.timePush += 1
+            self.timePush += 10
           }
       }
   }
@@ -380,6 +374,7 @@ class RecordingViewController: UIViewController {
   
   private func stopTimer() {
     timer?.invalidate()
+    imageTimer?.invalidate()
     self.timerLabel.text = "00:00:00"
     self.secondsOfTimer = 0 // 스탑 눌렀을때 다시 초 초기화 하는 방법 추가
   }
@@ -395,23 +390,40 @@ extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
   
   // 레코딩이 끝나면 호출
   func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
-    if (error != nil) {
-      print("Error recording movie: \(error!.localizedDescription)")
-    } else {
-      let videoRecorded = outputURL! as URL
-      self.imageFromVideo(url: videoRecorded, at: 1, completion: { image in
-        // 여기에 이미지가 1개가 들어가있는데
-        if let image = image {
-          self.images.append(image)
-        }
-        self.myImageView.image = image
-        
-        // url 에 imageFromVideo 함수를 써서 가져오는 이미지들을 모아서 영상으로 인코딩을 해야하나?
-      })
-      UISaveVideoAtPathToSavedPhotosAlbum(videoRecorded.path, nil, nil, nil)
-    }
+
   }
 }
+
+//MARK: - AVCapturePhotoCaptureDelegate
+extension RecordingViewController : AVCapturePhotoCaptureDelegate {
+func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+  guard let data = photo.fileDataRepresentation() else {
+    return
+  }
+  
+  let image = UIImage(data: data)
+  
+//  captureSession.stopRunning()
+  let imageView = UIImageView(image: image)
+  imageView.contentMode = .scaleAspectFill
+  imageView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+  view.addSubview(imageView)
+  
+  // 이미지 라이브러리에 저장 import Photos 를 해줘야함
+  guard error == nil else { print("Error capturing photo: \(error!)"); return }
+
+      PHPhotoLibrary.requestAuthorization { status in
+          guard status == .authorized else { return }
+          
+          PHPhotoLibrary.shared().performChanges({
+              // Add the captured photo's file data as the main resource for the Photos asset.
+              let creationRequest = PHAssetCreationRequest.forAsset()
+              creationRequest.addResource(with: .photo, data: photo.fileDataRepresentation()!, options: nil)
+          }, completionHandler: nil)
+      }
+  }
+}
+
 
 extension Double {
   func format(units: NSCalendar.Unit) -> String {
